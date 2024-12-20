@@ -1,210 +1,319 @@
-switch (localStorage.getItem("bookmarks")) {
-
-	case null:
-
-	break;
-
-	default:
-
-		bookmarks = localStorage.getItem("bookmarks");
-
-		sites = bookmarks.split(',');
-
-		for (let i = 0; i < sites.length; i++) {
-
-			let e = sites[i];
-
-			ePrprts = e.split(';;;');
-		}
-
-	break;
-}
-
 searchForm = document.querySelector(".home__form");
+
 searchInput = document.querySelector(".google-search");
+
+directAccess = document.querySelector(".home__direct-access");
 
 function showForm() {
 
     searchForm.classList.toggle("hidden");
 
     searchInput.focus();
-    
-	searchInput.value = "";
 
-	liveSearch();
+	searchInput.value = '';
+
+	return liveSearch();
 }
 
-document.documentElement.addEventListener('keyup', (e)=>{
+document.documentElement.addEventListener("keydown", (e)=>{
 
-    switch (e.key) {
+	if (e.key == "|"){
 
-		case "|":
+        e.preventDefault();
 
-			showForm();
-
-		break;
-    }
+		return showForm();
+	}
 });
 
 document.getElementById('form-btn').addEventListener("click", showForm);
 
-document.getElementById("img_mask").addEventListener("click", ()=>{
+document.getElementById("img_mask").addEventListener("click", ()=> searchInput.focus() );
 
-	searchInput.focus();
-});
+document.getElementById("home_img").getElementsByTagName("img")[0].addEventListener("click", ()=> searchInput.focus() );
 
-searchEngineMenu = document.getElementById("s_engine");
+document.querySelector(".home__logo-containerrr").addEventListener("click", ()=> searchInput.focus() );
 
-function vetSEngine () {
+const historyAccesses = document.getElementById("direct_access_row");
 
-	switch (searchEngineMenu.value) {
+directAccess.addEventListener("click", ()=> searchInput.focus() );
 
-		case "Baidu":
+searchEngineMenuOptions = [
 
-			searchEngine = "https://www.baidu.com/s?ie=utf-8&wd=";
+	{"Baidu" : "https://www.baidu.com/s?ie=utf-8&wd="},
 
-		break;
+	{"Bing" : "https://www.bing.com/search?q="},
 
-		case "Duckduckgo":
+	{"Brave" : "https://search.brave.com/search?q="},
 
-			searchEngine = "https://duckduckgo.com/?q=";
+	{"Duckduckgo" : "https://duckduckgo.com/?q="},
 
-		break;
+	{"Ecosia" : "https://www.ecosia.org/search?q="},
 
-		case "Google":
+	{"Google" : "https://www.google.com/search?q="},
 
-			searchEngine = "https://www.google.com/search?q=";
+	{"Qwant" : "https://www.qwant.com/?q="},
 
-		break;
+	{"Yandex" : "https://yandex.com/search/?text="},
 
-		case "Qwant":
+	{"Yandex-r" : "https://yandex.ru/search/?text="}
+];
 
-			searchEngine = "https://www.qwant.com/?q=";
+if (localStorage.getItem("search_engines") ){
 
-		break;
+	cachedSearchEngines = localStorage.getItem("search_engines");
 
-		case "Yandex":
+	cachedSEArray = cachedSearchEngines.split(",");
 
-			searchEngine = "https://yandex.com/search/?text=";
+	cachedSEArray.forEach(e => {
 
-		break;
+		cachedSE = e.split();
 
-		case "Yandex-r":
+		cachedSESplit = cachedSE[0].split(";;;");
 
-			searchEngine = "https://yandex.ru/search/?text=";
+		cachedSESplit[0];
 
-		break;
-	}
+		cachedSESplit[1];
+
+		newSEObject = JSON.parse('{ "' + cachedSESplit[0] + '" : "' + cachedSESplit[1] + '" }');
+
+		searchEngineMenuOptions.push(newSEObject);
+	});
 }
 
-searchEngineMenu.addEventListener("input", ()=>{
+// searchEngineMenu = document.getElementById("s_engine");
 
-	localStorage.setItem("searchEngine", searchEngineMenu.value);
-});
+function createOptions (name) {
 
-switch (localStorage.getItem("searchEngine")) {
+	let option = document.createElement("option");
 
-	case null:
+	option.setAttribute("value", name);
 
-	break;
-	
-	default:
+	name == "Google" ? option.setAttribute("selected", "true") : false;
 
-		searchEngineMenu.value = localStorage.getItem("searchEngine");
+	searchEngineMenu.appendChild(option);
 
-	break;
+	option.innerText = name;
 }
 
-resultsBoxC = document.querySelector(".results_box_container");
+searchEngineMenuOptions.forEach(e => {
 
-results = document.querySelector(".results_box");
+	optionName = Object.keys(e);
 
-links = document.querySelectorAll('.result');
+	createOptions(optionName[0]);
+});
 
-currentURL = window.location.href;
+searchEngineMenu.addEventListener("input", ()=> localStorage.setItem("searchEngine", searchEngineMenu.value) );
 
-function liveSearch() {
+if (localStorage.getItem("searchEngine") ){
 
-	let search_query = searchInput.value;
+	searchEngineMenu.value = localStorage.getItem("searchEngine");
+}
 
-	for (i = 0; i < links.length; i++) {
+// resultsBoxC = document.getElementById("results_box_container");
 
-		switch (search_query.length) {
+// results = document.getElementById("results_box");
 
-			case 0:
+links = document.querySelectorAll(".result");
 
-				resultsBoxC.classList.add("hidden");
-	
-				links[i].classList.remove("actual");
+// favoritesRow = document.getElementById("favorites_menu");
 
-				directAccess = document.querySelector(".home__direct-access-row");
-				
-				directAccess.style.display = "block";
+if (localStorage.getItem("favorites") == null){
 
-			break;
+	localStorage.setItem("favorites", "GooS_tav");
 
-			default:
+	location.reload();
+}else{
 
-				directAccess.style.display = "none";
+	favorites = localStorage.getItem("favorites");
 
-				switch (links[i].textContent.toLowerCase().includes(search_query.toLowerCase())) {
+	favs = favorites.split(";;;");
 
-					case false:
-			
-						links[i].classList.remove("actual");
+	for (let i = 0; i < links.length; i++) {
 
-						switch (document.querySelectorAll('.actual').length) {
+		let e = links[i].innerHTML.split("<")[0];
 
-							case 0:
+		links[i].addEventListener("click", ()=>{
 
-								resultsBoxC.classList.add("hidden");
-							break;
-						}
-					
-					break;
+			searchInput.value = "";
 
-					default:
-			
-						links[i].classList.add("actual");
-			
-						resultsBoxC.classList.remove("hidden");
+			liveSearch();
 
-					break;
-				}
+			searchInput.focus();
+		});
 
-			break;
+		for (let n = 0; n < favs.length; n++){
+
+			let l = favs[n];
+
+			if (e == l){
+
+				let a = document.createElement('a');
+
+				let icon = document.createElement("span");
+
+				let p = document.createElement('p');
+
+				a.setAttribute("href", links[i].href);
+
+				a.setAttribute("target", "_blank");
+
+				a.setAttribute("title", e);
+
+				a.innerText = "";
+
+				favoritesRow.appendChild(a);
+
+				icon.innerText = l[0];
+
+				a.appendChild(icon);
+
+				p.innerText = l;
+
+				a.appendChild(p);
+			}
 		}
 	}
+
+	if (favoritesRow.scrollWidth > favoritesRow.clientWidth){
+
+		favoritesRow.style.justifyContent = "flex-start"
+	}
 }
 
-//A little delay
-let typingTimer;               
-let typeInterval = 250;  
+const currentURL = window.location.href;
 
-searchInput.addEventListener('input', () => {
+function addFav(e){
 
-	clearTimeout(typingTimer);
-	
-	typingTimer = setTimeout(liveSearch, typeInterval);
+	let favSite = e.target.dataset.site;
+
+	if (localStorage.getItem("favorites") == null){
+
+		localStorage.setItem("favorites", favSite);
+
+		return location.reload();
+	}
+
+	let favorites = localStorage.getItem("favorites");
+
+	if (favorites.includes(";;;") ){
+
+		let favs = favorites.split(";;;");
+
+		if (favs.find((m)=>{return m == favSite}) == undefined){
+
+			localStorage.setItem("favorites", favorites + ";;;" + favSite);
+		}
+
+		return location.reload();
+	}
+
+	if (favorites != favSite){
+
+		localStorage.setItem("favorites", favorites + ";;;" + favSite);
+	}
+
+	return location.reload();
+}
+
+function isEmptyOrSpaces (str) {
+
+    return str == null || str.match(/^\s*$/) !== null;
+}
+
+favMenu = false;
+
+function liveSearch(){
+
+	let q = searchInput.value;
+
+	for (i = 0; i < links.length; i++){
+
+		if (isEmptyOrSpaces(q) ){
+
+			links[i].classList.remove("actual");
+
+			resultsBoxC.classList.add("hidden");
+
+			directAccess.style.display = "block";
+
+			return
+		}
+
+		resultsBoxC.classList.remove("hidden");
+
+		directAccess.style.display = "none";
+		
+		searchEngineMenuOptions.forEach(e => {
+
+			if (searchEngineMenu.value == Object.keys(e) ){
+
+				searchEngine = Object.values(e)[0];
+
+				links[0].href = searchEngine + encodeURIComponent(q);
+
+				links[0].innerHTML = searchEngine + encodeURIComponent(q);
+			}
+		});
+
+		if (links[i].textContent.toLowerCase().replaceAll(' ', '').includes(q.toLowerCase().replaceAll(' ', '') ) ){
+
+			links[i].classList.add("actual");
+		}else{
+
+			links[i].classList.remove("actual");
+		}
+
+		if (q.includes('.') && !q.includes(' ') ){
+
+			https = q.includes("http") ? '' : "https://";
+
+			links[0].href = https + q;
+
+			links[0].innerHTML = https + q;
+		}
+
+		links[0].classList.add("actual");
+
+		if (favMenu){
+
+			links[0].classList.remove("actual");
+		}
+	}
+
+	return
+}
+
+searchInput.addEventListener("input", liveSearch);
+
+document.getElementById("add_fav").addEventListener("click", ()=>{
+
+	searchInput.placeholder = "Nuevo favorito:";
+
+	document.getElementById("cancel_btn").classList.remove("hidden");
+
+	directAccess.style.display = "none";
+
+	links.forEach(e => {
+
+		e.dataset.site = e.innerHTML.split('<')[0];
+
+		e.target = '';
+
+		e.href = '#';
+
+		e.addEventListener("click", (m)=> addFav(m) );
+	});
+
+	searchForm.classList.remove("hidden");
+
+	favMenu = true;
+
+	return liveSearch();
 });
-
-resultsBoxC.addEventListener("click", ()=>{
-
-	searchInput.value = "";
-
-	setTimeout(() => {
-
-		liveSearch();
-
-		searchInput.focus();
-	}, 250);
-});
-
-directAccessRow = document.querySelector(".home__direct-access-row");
 
 function updateHistory() {
 
-	switch (localStorage.getItem("history")) {
+	switch ( localStorage.getItem("history") ) {
 
 		case null:
 
@@ -214,21 +323,43 @@ function updateHistory() {
 
 			userHistory = localStorage.getItem("history");
 
-			inputs = userHistory.split(',');
+			inputs = userHistory.split(';;;');
 
 			switch (userHistory == "noHistory") {
 
 				case false:
-			
-					directAccessRow.innerHTML = "";
+
+					historyAccesses.innerHTML = "";
 
 					for (let i = 0; i < inputs.length; i++) {
 
-						const element = inputs[i];
+						let element = inputs[i];
 
 						let shortcut = document.createElement("a");
 
-						shortcut.setAttribute("href", "https://www.google.com/search?q=" + element);
+						for (let i = 0; i < searchEngineMenuOptions.length; i++) {
+
+							let e = searchEngineMenuOptions[i];
+
+							let sEMOKey = Object.keys(e);
+
+							switch ( element.includes( sEMOKey[0] ) ) {
+
+								case false:
+
+								break;
+
+								default:
+
+									elementEngine = Object.values(e);
+
+									elementLink = element.replace(sEMOKey[0] + ": ", elementEngine[0]);
+
+								break;
+							}
+						}
+
+						shortcut.setAttribute("href", elementLink);
 
 						shortcut.setAttribute("title", "Acceso directo");
 
@@ -236,11 +367,11 @@ function updateHistory() {
 
 						shortcut.setAttribute("target", "_blank");
 
-						directAccessRow.appendChild(shortcut);
+						historyAccesses.appendChild(shortcut);
 
 						let icon = document.createElement("img");
 
-						icon.setAttribute("src", "https://www.google.com/favicon.ico");
+						icon.setAttribute("src", "./img/android-icon-192x192.png");
 
 						icon.setAttribute("class", "direct-access__img");
 
@@ -276,40 +407,65 @@ function openTab(sEngine, array) {
 
 		default:
 
-			inputs = [];
+			for (let i = 0; i < searchEngineMenuOptions.length; i++) {
 
-			switch (localStorage.getItem("history")) {
+				let e = searchEngineMenuOptions[i];
+
+				switch ( searchEngineMenu.value == Object.keys(e) ) {
+
+					case false:
+
+					break;
+
+					default:
+
+						searchEngine = Object.values(e)[0];
+
+					break;
+				}
+			}
+
+			switch ( localStorage.getItem("history") ) {
 
 				case null:
-					
-					localStorage.setItem('history', array);
+
+					localStorage.setItem('history', searchEngineMenu.value + ": " + array);
 
 				break;
 
 				default:
 
-					vetSEngine();
-
-					userHistory = localStorage.getItem("history");
-		
-					inputs = userHistory.split(',');
-
 					switch (userHistory == "noHistory") {
 
 						case false:
 
-							inputs.push(array);
-				
+							userHistory = userHistory + ";;;" + searchEngineMenu.value + ": " + array;
+
+							inputs = userHistory.split(";;;");
+
 							switch (inputs.length < 6) {
-				
+
 								case false:
-				
+
 									inputs.shift();
-				
+
+									newHistory = "";
+
+									inputs.forEach(e => {
+
+										newHistory == "" ? newHistory = e : newHistory += ";;;" + e;
+									});
+
+									localStorage.setItem('history', newHistory);
+
+								break;
+
+								default:
+
+									localStorage.setItem('history', userHistory);
+
 								break;
 							}
-							
-							localStorage.setItem('history', inputs);
 
 						break;
 					}
@@ -324,9 +480,11 @@ function openTab(sEngine, array) {
 
 	searchInput.value = "";
 
+	liveSearch();
+
 	directAccess.style.display = "block";
 
-	setTimeout(() => {
+	setTimeout( () => {
 
 		window.open(searchEngine + array);
 	}, 250);
@@ -336,7 +494,7 @@ function openTab(sEngine, array) {
 
 function redirect(array) {
 
-	switch (array.includes("http")) {
+	switch ( array.includes("http") ) {
 
 		case false:
 
@@ -350,47 +508,40 @@ function redirect(array) {
 
 		break;
 	}
-	
+
 	confRedir = confirm("Estás llendo a: " + array);
 
-	switch (confRedir) {
-
-		case true:
-
-			openTab(0, url);
-
-		break;
-	}
+	confRedir == true ? openTab(0, url) : false;
 }
 
 function createLink(path, tag, keyWords) {
 
-	switch (document.getElementById(keyWords)) {
+	switch ( document.getElementById(keyWords) ) {
 
 		case null:
 
 			let site = document.createElement("a");
-		
+
 			site.setAttribute("href", path);
-		
+
 			site.setAttribute("id", keyWords);
-		
+
 			site.setAttribute("class", "result actual");
-		
+
 			results.appendChild(site);
-			
+
 			site.innerText = tag;
-		
+
 			let words = document.createElement("span");
-		
+
 			words.setAttribute("class", "key_words");
-		
+
 			site.appendChild(words);
-			
+
 			words.innerText = keyWords;
-			
+
 			resultsBoxC.classList.remove("hidden");
-		
+
 			links = document.querySelectorAll('.result');
 
 		break;
@@ -403,60 +554,21 @@ document.querySelector(".home__form").addEventListener("submit", (e)=>{
 
 	let voiceText = searchInput.value;
 
-	switch (voiceText.length > 0) {
+	switch ( isEmptyOrSpaces(voiceText) ) {
 
-		case true:
+		case false:
 
-			switch (voiceText.includes(' ')) {
+			switch ( voiceText.includes('.') && !voiceText.includes(' ') ) {
 
 				case false:
 
-					switch (voiceText.includes('.')) {
-
-						case false:
-
-							switch (voiceText.toLowerCase()) {
-
-								case '/nsfw':
-
-									switch (document.querySelector(".nsfw")) {
-
-										case null:
-
-											createLink("sites_list/sites_list.html", "NSFW Sites", "/nsfw");
-
-										break;
-									}
-
-								break; /* 
-
-								case '/krk':
-
-									createLink("karaoke/", "Karaoke");
-
-								break; */
-
-								default:
-
-									openTab(1, voiceText);
-
-								break;
-							}
-
-						break;
-
-						default:
-							
-							redirect(voiceText);
-
-						break;
-					}
+					openTab(1, voiceText);
 
 				break;
 
 				default:
 
-					openTab(1, voiceText);
+					redirect(voiceText);
 
 				break;
 			}

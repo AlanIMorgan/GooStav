@@ -1137,7 +1137,7 @@ enlace("https://fontawesome.com/", "Font Awesome", "icons logos diseño gráfico
 
 enlace("https://gatonplayseries.com/", "GatonPlaySeries", "ver watch películas peliculas series completas gratis full free movies cinema piracy piratería pirateria", extraLinks);
 
-enlace("https://github.com/AlanIMorgan/GooS_tav", "GitHub", "code código codigo developers desarrolladores programación programacion", extraLinks);
+enlace("https://github.com/AlanIMorgan/GooStav", "GitHub", "code código codigo developers desarrolladores programación programacion", extraLinks);
 
 enlace("https://gnula2.org/", "Gnula2", "ver watch películas peliculas series completas gratis full free movies cinema piracy piratería pirateria", extraLinks);
 

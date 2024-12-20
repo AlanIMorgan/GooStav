@@ -119,7 +119,7 @@ links = document.querySelectorAll(".result");
 
 if (localStorage.getItem("favorites") == null){
 
-	localStorage.setItem("favorites", "GooS_tav");
+	localStorage.setItem("favorites", "GooStav");
 
 	location.reload();
 }else{

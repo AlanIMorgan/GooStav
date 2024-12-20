@@ -1145,7 +1145,7 @@ enlace("http://gnula.me", "Gnula.me", "ver watch películas peliculas series com
 
 enlace("https://gnula.nu/", "Gnula", "ver watch películas peliculas series completas gratis full free movies cinema piracy piratería pirateria", extraLinks);
 
-enlace("https://goostav.vercel.app/", "GooS_tav", "goostav buscar search búsqueda busqueda vercel", extraLinks);
+enlace("https://goostav.vercel.app/", "GooStav", "goostav buscar search búsqueda busqueda vercel", extraLinks);
 
 enlace("https://www.guitars101.com/", "Guitars 101", "escuchar listen descargar música musica gratis full free download piracy piratería pirateria", extraLinks);
 

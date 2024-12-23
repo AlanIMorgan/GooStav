@@ -714,6 +714,13 @@ td,
 	margin-bottom: 20px;
 }
 
+#delete_wpp {
+	display: inline-block;
+	margin-bottom: 20px;
+    background: #d05070;
+    color: #000;
+}
+
 #delete_favorites {
 	display: block;
 	margin-top: 20px;

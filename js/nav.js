@@ -80,6 +80,8 @@ document.getElementById("random_wpp").addEventListener("click", ()=>{
     .catch(err => console.log('Solicitud fallida', err) );
 });
 
+document.getElementById("delete_wpp").addEventListener("click", ()=>{changeBackground(''); location.reload();});
+
 // Nickname
 
 const nickName = document.getElementById("nick_sttng");

@@ -62,7 +62,7 @@ function changeBackground (url){
             document.getElementById("img_mask").style = "z-index: 1;";
         break;
     }
-}
+} /* 
 
 document.getElementById("random_wpp").addEventListener("click", ()=>{
 
@@ -78,7 +78,7 @@ document.getElementById("random_wpp").addEventListener("click", ()=>{
     })
 
     .catch(err => console.log('Solicitud fallida', err) );
-});
+}); */
 
 document.getElementById("delete_wpp").addEventListener("click", ()=>{changeBackground(''); location.reload();});
 

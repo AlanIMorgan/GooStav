@@ -80,8 +80,6 @@ if (localStorage.getItem("search_engines") ){
 	});
 }
 
-// searchEngineMenu = document.getElementById("s_engine");
-
 function createOptions (name) {
 
 	let option = document.createElement("option");
@@ -109,13 +107,7 @@ if (localStorage.getItem("searchEngine") ){
 	searchEngineMenu.value = localStorage.getItem("searchEngine");
 }
 
-// resultsBoxC = document.getElementById("results_box_container");
-
-// results = document.getElementById("results_box");
-
 links = document.querySelectorAll(".result");
-
-// favoritesRow = document.getElementById("favorites_menu");
 
 if (localStorage.getItem("favorites") == null){
 
@@ -255,7 +247,7 @@ function liveSearch(){
 			}
 		});
 
-		if (links[i].textContent.toLowerCase().replaceAll(' ', '').includes(q.toLowerCase().replaceAll(' ', '') ) ){
+		if (links[i].textContent.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").replaceAll(' ', '').includes(q.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").replaceAll(' ', '') ) ){
 
 			links[i].classList.add("actual");
 		}else{

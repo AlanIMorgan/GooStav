@@ -534,7 +534,7 @@ addSearchEngine.addEventListener("click", ()=>{
 
     SearchEngineModal.classList.replace("hidden", "new_search_engine_modal-form");
 
-    window.scrollTo(0, 0);
+    profileNavMenu.scrollTo(0, profileNavMenu.scrollHeight);
 
     profileNavMenu.classList.add("ovrflw_hddn");
 
@@ -806,7 +806,7 @@ masSites.style.display = "inline-block";
 
 masSites.addEventListener("click", ()=>{
 
-    window.scrollTo(0, 0);
+    navMenu.scrollTo(0, 0);
 
     newSiteModal.classList.replace("hidden", "new_site_modal-form");
 

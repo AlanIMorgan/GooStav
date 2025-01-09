@@ -325,7 +325,7 @@ a {
 
 	.direct-access {
 
-		width: 18vw !important;
+		width: 50vw !important;
 	}
 }
 
@@ -345,12 +345,12 @@ a {
 	.home__search-container {
 
 		top: calc(37% - 44px) !important;
-	} */
+	}
 
 	.direct-access {
 
 		width: 25vw !important;
-	}
+	} */
 }
 
 .nav__submenu-element {
@@ -995,23 +995,27 @@ td,
 	fill: #b7f;
 }
 
+#direct_access_row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .direct-access {
-	display: inline-flex;
-	flex-direction: column;
-	width: 12vw; /* 
-	height: 124px; */
-	margin: 0 10px;
-	border-radius: 4px;
-	justify-content: center;
-	text-align: center; /* 
-	padding: 5px; */
+	display: block;
+	width: 31vw;
+	margin-bottom: 10px;
+    background-color: var(--sec);
+    border-radius: 25px;
+	text-align: center;
 }
 
 .direct-access:hover {
-	background-color: rgba(255, 255, 255, 0.12);
+	background-color: var(--ffth);
 }
 
 .direct-access .direct-access__img {
+	display: none !important;
 	cursor: pointer;
 	align-items: center;
 	background-color: rgb(244, 244, 244);
@@ -1019,7 +1023,6 @@ td,
 	display: flex; /* 
 	height: 48px; */
 	justify-content: center;
-	margin-bottom: rgba(241, 243, 244, 1);
 	width: 37%;
 	margin: auto;
 	border: none;
@@ -1027,17 +1030,11 @@ td,
 
 .direct-access .direct-access__info {
 	width: 100%;
-	margin: auto;
-	margin-top: -6px;
-	margin-bottom: 6px;
-	padding: 4px;
-	font-size: 11px;
+	padding: 10px;
+	font-size: 12px;
 	color: var(--primary);
-	font-weight: 700;
-	background-color: var(--sec);
-	border-radius: 25px; /* 
-    text-overflow: ellipsis; */
-	overflow-x: auto;
+    text-overflow: ellipsis;
+	overflow-x: hidden;
 	white-space: nowrap;
 }
 

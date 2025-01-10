@@ -772,7 +772,7 @@ td,
 .home__logo-containerrr p {
 	font-size: 37px;
 	font-weight: bolder;
-	margin-top: 25vh;
+	margin-top: 16vh;
     filter: drop-shadow(0px 0px 1px #000) drop-shadow(0px 0px 3px #fff);
 }
 
@@ -786,7 +786,7 @@ td,
 
 .home__search-container {
 	position: absolute;
-    top: calc(50% - 44px);
+    top: 30%;
 	text-align: center;
 	width: 100%;
 /* 	margin-top: 21.5%; */
@@ -937,7 +937,7 @@ td,
 
 .home__direct-access {
 	position: absolute;
-	top: 58%;
+	top: 45%;
 	width: 100%;
 }
 
@@ -952,7 +952,7 @@ td,
 	display: flex;
 	justify-content: center;
 	overflow: auto;
-	margin: 0 12vw 20px;
+	margin: 0 20px 20px;
 }
 
 .home__direct-access-favorites a {

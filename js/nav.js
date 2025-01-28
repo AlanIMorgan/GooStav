@@ -442,7 +442,7 @@ if (localStorage.getItem("hideFavorites") ){
 
 favoritesSttng.addEventListener("click", ()=>{
 
-    favoritesSttng.checked ? localStorage.setItem("hideFavorites", "true") : localStorage.removeItem("hideFavorites");
+    favoritesSttng.checked ? localStorage.removeItem("hideFavorites") : localStorage.setItem("hideFavorites", "true");
 
     location.reload();
 });

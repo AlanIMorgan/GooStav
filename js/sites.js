@@ -66,6 +66,10 @@ enlace("https://www.apple.com/app-store/", "App Store", "apple apps aplicaciones
 
 enlace("https://www.artistapirata.com/", "Artista Pirata", "piratería piracy software pc computer computadora windows mac apple descargar programas gratis full free download", extraLinks);
 
+enlace("https://news.artnet.com/", "Artnet", "pinturas painting drawings dibujos imágenes pics pictures fotos photos buscar búsqueda search creative content contenido creativo obras artísticas artists artistas artes noticias auctions subastas comprar buy", extraLinks);
+
+enlace("https://artvee.com/", "Artvee", "pinturas painting drawings dibujos imágenes pics pictures fotos photos buscar búsqueda search creative content contenido creativo obras artísticas artists artistas artes", extraLinks);
+
 enlace("https://www.artstation.com", "ArtStation", "diseño gráfico graphic design imágenes images img pics pictures photos fotos wallpapers arte 3d digital artists artistas digitales", extraLinks);
 
 enlace("https://Baidu.com/", "Baidu", "buscar search búsqueda", extraLinks);
@@ -74,7 +78,7 @@ enlace("https://bandcamp.com/", "Bandcamp", "escuchar listen música", extraLink
 
 enlace("https://www.base-search.net/", "BASE", "Bielefeld Search Engine buscar búsqueda escuela school scholar escuela ensayos books libros documentos docs pdfs tareas académicos ", extraLinks);
 
-enlace("https://www.behance.net/", "Behance", "diseño gráfico graphic design imágenes images img pics pictures photos fotos wallpapers arte 3d digital artists artistas digitales", extraLinks);
+enlace("https://www.behance.net/", "Behance", "diseño gráfico graphic design imágenes images img pics pictures photos fotos wallpapers arte 3d digital drawings dibujos artists artistas digitales", extraLinks);
 
 enlace("https://scriptorum.humanidades.unam.mx/SitiosInteres/Catalogo", "BIBLIOTHECA SCRIPTORVM GRAECORVM ET ROMANORVM MEXICANA", "buscar búsqueda search school scholar escuela books libros documentos documents docs pdfs académicos download free descargar gratis", extraLinks);
 
@@ -100,7 +104,9 @@ enlace("https://cuevana3.ch/", "Cuevana3", "ver watch películas series completa
 
 enlace("https://www.deepl.com/es/translator", "Deepl", "translate languages traducir idiomas", extraLinks);
 
-enlace("https://www.deviantart.com", "DeviantArt", "diseño gráfico graphic design imágenes images img pics pictures photos fotos wallpapers arte 3d digital artists artistas digitales", extraLinks);
+enlace("https://www.deviantart.com", "DeviantArt", "diseño gráfico graphic design imágenes images img pics pictures photos fotos wallpapers arte 3d digital drawings dibujos artists artistas digitales", extraLinks);
+
+enlace("https://dezoomify.ophir.dev/", "Dezoomify", "google arts & culture downloader descargar imágenes pics pictures fotos photos", extraLinks);
 
 enlace("https://dialnet.unirioja.es/", "Dialnet", "buscar búsqueda search school scholar escuela books libros documentos documents docs pdfs tareas ensayos académicos ", extraLinks);
 
@@ -141,6 +147,8 @@ enlace("https://gnula.nu/", "Gnula", "ver watch películas series completas grat
 enlace("https://goostav.vercel.app/", "GooStav", "goostav buscar search búsqueda vercel", extraLinks);
 
 enlace("https://www.guitars101.com/", "Guitars 101", "escuchar listen descargar música gratis full free download piracy piratería", extraLinks);
+
+enlace("https://historia-arte.com/", "Historia/Arte (HA!)", "pinturas painting drawings dibujos imágenes pics pictures fotos photos buscar búsqueda search creative content contenido creativo obras artísticas artists artistas artes", extraLinks);
 
 enlace("https://hollymoviehd.cc/", "HollyMovieHD", "ver watch películas series completas gratis full free movies cinema piracy piratería", extraLinks);
 
@@ -198,6 +206,8 @@ enlace("https://mqs.link/", "MQS Albums Download", "escuchar listen descargar m�
 
 enlace("https://tavasci3-musicrewind.blogspot.com/", "Music Rewind", "escuchar listen descargar música gratis full free download piracy piratería", extraLinks);
 
+enlace("https://www.mutualart.com/", "MutualArt", "pinturas painting drawings dibujos imágenes pics pictures fotos photos buscar búsqueda search creative content contenido creativo obras artísticas artists artistas artes auctions subastas comprar buy", extraLinks);
+
 enlace("https://www.napster.com", "Napster", "escuchar listen música", extraLinks);
 
 enlace("https://www.newgrounds.com/", "Newgrounds", "diseño gráfico graphic design imágenes images img pics pictures photos fotos wallpapers arte 3d digital artists artistas digitales juegos games comunidades redes sociales networks", extraLinks);
@@ -232,9 +242,9 @@ enlace("https://pelisplay.info/", "Pelisplus", "ver watch películas series comp
 
 enlace("https://photocall.tv", "Photocall tv", "ver watch canales televisión gratis watch tv free channels piatería piracy", extraLinks);
 
-enlace("https://www.pinterest.com.mx/", "Pinterest", "imágenes images img pics pictures photos fotos wallpapers arte digital artists artistas digitales", extraLinks);
+enlace("https://www.pinterest.com.mx/", "Pinterest", "imágenes images img pics pictures photos fotos wallpapers arte digital drawings dibujos artists artistas digitales", extraLinks);
 
-enlace("https://www.pixiv.net/", "Pixiv", "diseño gráfico graphic design imágenes images img pics pictures photos fotos wallpapers arte 3d digital artists artistas digitales", extraLinks);
+enlace("https://www.pixiv.net/", "Pixiv", "diseño gráfico graphic design imágenes images img pics pictures photos fotos wallpapers arte 3d digital drawings dibujos artists artistas digitales", extraLinks);
 
 enlace("https://pixlr.com/", "Pixlr", "diseño gráfico graphic design editar edición recortar imágenes images pics pictures fotos jpg jpeg png gif webp img", extraLinks);
 

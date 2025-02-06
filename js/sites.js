@@ -4,6 +4,8 @@ enlace("https://www.google.com/", "Google", "buscar search búsqueda", googleLin
 
 enlace("https://myaccount.google.com/", "Cuenta de google", "account sesión manage session user gestionar usuario", googleLinks);
 
+enlace("https://artsandculture.google.com/", "Arte y cultura", "pinturas painting drawings dibujos imágenes pics pictures fotos photos buscar búsqueda search creative content contenido creativo obras artísticas artists artistas artes", googleLinks);
+
 enlace("https://classroom.google.com/", "Google Classroom", "academic school scholar escuela tareas homework", googleLinks);
 
 enlace("https://drive.google.com/", "Drive", "google almacenamiento nube cloud storage almacenar", googleLinks);
@@ -66,6 +68,8 @@ enlace("https://www.apple.com/app-store/", "App Store", "apple apps aplicaciones
 
 enlace("https://www.artistapirata.com/", "Artista Pirata", "piratería piracy software pc computer computadora windows mac apple descargar programas gratis full free download", extraLinks);
 
+enlace("https://www.artchive.com/", "Artchive", "pinturas painting drawings dibujos imágenes pics pictures fotos photos buscar búsqueda search creative content contenido creativo obras artísticas artists artistas artes", extraLinks);
+
 enlace("https://news.artnet.com/", "Artnet", "pinturas painting drawings dibujos imágenes pics pictures fotos photos buscar búsqueda search creative content contenido creativo obras artísticas artists artistas artes noticias auctions subastas comprar buy", extraLinks);
 
 enlace("https://artvee.com/", "Artvee", "pinturas painting drawings dibujos imágenes pics pictures fotos photos buscar búsqueda search creative content contenido creativo obras artísticas artists artistas artes", extraLinks);
@@ -121,6 +125,8 @@ enlace("https://www.ecosia.org/", "Ecosia", "buscar search búsqueda", extraLink
 enlace("https://www.espaebook2.com/", "ERIC", "Education Resources Information Center buscar búsqueda search school scholar escuela books libros documentos documents docs pdfs tareas ensayos académicos ", extraLinks);
 
 enlace("https://www.espaebook2.com/", "EspaEbook", "buscar búsqueda search books ebooks libros electrónicos epub gratis free piratería piracy full free download descargar", extraLinks);
+
+enlace("https://www.etsy.com/", "Etsy", "pinturas painting drawings dibujos imágenes pics pictures fotos photos buscar búsqueda search creative content contenido creativo obras artísticas artists artistas artes comprar buy vender sell regalos gifts ropa clothes vintage joyería jewelry decoración decoration tienda shopping comprar compras e-commerce ecommerce ecomerce comercio impresiones prints pegatinas estampas stickers", extraLinks);
 
 enlace("https://excalidraw.com/", "Excalidraw", "whiteboard pizarra pizarrón diagramas dibujar drawing", extraLinks);
 

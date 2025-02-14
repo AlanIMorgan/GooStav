@@ -70,6 +70,8 @@ enlace("https://www.artistapirata.com/", "Artista Pirata", "piratería piracy so
 
 enlace("https://www.artchive.com/", "Artchive", "pinturas painting drawings dibujos imágenes pics pictures fotos photos buscar búsqueda search creative content contenido creativo obras artísticas artists artistas artes", extraLinks);
 
+enlace("https://arthive.com/", "Arthive", "pinturas painting drawings dibujos imágenes pics pictures fotos photos buscar búsqueda search creative content contenido creativo obras artísticas artists artistas artes redes sociales networks", extraLinks);
+
 enlace("https://news.artnet.com/", "Artnet", "pinturas painting drawings dibujos imágenes pics pictures fotos photos buscar búsqueda search creative content contenido creativo obras artísticas artists artistas artes noticias auctions subastas comprar buy", extraLinks);
 
 enlace("https://artvee.com/", "Artvee", "pinturas painting drawings dibujos imágenes pics pictures fotos photos buscar búsqueda search creative content contenido creativo obras artísticas artists artistas artes", extraLinks);
@@ -93,6 +95,8 @@ enlace("https://www.bioline.org.br/", "Bioline", "buscar búsqueda search school
 enlace("https://www.canva.com/", "Canva", "diseño gráfico graphic design editar edición recortar imágenes images pics pictures fotos jpg jpeg png gif webp img", extraLinks);
 
 enlace("https://chat.openai.com/", "ChatGPT", "inteligencia artificial intelligence ia ai búsqueda buscar search", extraLinks);
+
+enlace("https://www.cinecalidad.rs/", "Cine Calidad", "ver watch películas series completas gratis full free movies cinema piracy piratería", extraLinks);
 
 enlace("https://sur.ly/o/cinefiliamalversa.blogspot.com.ar/AA000014?pageviewId=desktop-302e36363034343030302031363638383031373733203438303533313335", "Cinéfila Malversa", "ver watch películas series completas gratis full free movies cinema piracy piratería", extraLinks);
 
@@ -340,7 +344,7 @@ enlace("https://www.tvconexion.com/", "TV Conexion HD", "ver watch canales telev
 
 enlace("https://x.com/", "X (Twitter)", "redes sociales network tuits", extraLinks);
 
-enlace("https://twittervid.com/", "Twitter Vid", "twitter downloader descargar vídeos imágenes pics pictures fotos photos", extraLinks);
+enlace("https://twittervideodownloader.com/", "Twitter Video Downloader", "twitter x.com downloader descargar vídeos imágenes pics pictures fotos photos", extraLinks);
 
 enlace("https://www.typingclub.com/", "TypingClub", "utilities tools herramientas learn aprender escribir write", extraLinks);
 
